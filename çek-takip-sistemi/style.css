@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ebebeb;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #6a1b9a;
+    /* Mor tema */
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.sidebar ul li {
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+
+.sidebar ul li:hover {
+    background-color: #8e24aa;
+}
+
+.hamburger {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #440d66;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.content {
+    margin-left: 0;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.content.active {
+    margin-left: 250px;
+}
+
+.check-container {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1bee7;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #64288a;
+    outline: none;
+}
+
+.add-check {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+input,
+button {
+    padding: 12px;
+    border: 2px solid #e1bee7;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #5f1d96;
+}
+
+.check-item {
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr 1fr auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #f3e5f5;
+    transition: 0.3s;
+}
+
+.check-item:hover {
+    background-color: #f3e5f5;
+}
+
+.check-item:last-child {
+    border-bottom: none;
+}
+
+.total-box {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #4c2564;
+    color: white;
+    border-radius: 6px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#totalAmount {
+    color: #fff;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    .content.active {
+        margin-left: 0;
+    }
+
+    .add-check {
+        grid-template-columns: 1fr;
+    }
+
+    .check-item {
+        grid-template-columns: 30px 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .check-item span {
+        grid-column: 2 / 3;
+    }
+
+    .search-box input {
+        font-size: 16px;
+    }
+}

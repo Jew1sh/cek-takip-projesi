@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Çek Takip Sistemi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Boxicons kütüphanesi eklendi -->
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <!-- Boxicons script eklendi -->
+  </head>
+  <body>
+    <div class="hamburger" onclick="toggleSidebar()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li onclick="deleteSelected()">
+          Seçilenleri Sil
+          <i
+            class="bx bx-trash"
+            style="vertical-align: middle; margin-left: 5px"
+          ></i>
+        </li>
+        <!-- Çöp kutusu ikonu eklendi -->
+        <li onclick="addNewCheck()">
+          Yeni Çek Ekle
+          <i
+            class="bx bx-plus"
+            style="vertical-align: middle; margin-left: 5px"
+          ></i>
+        </li>
+        <!-- İkon eklendi -->
+      </ul>
+    </div>
+
+    <div class="content" id="content">
+      <div class="check-container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Çek No ile ara..."
+            onkeyup="searchChecks()"
+          />
+        </div>
+        <div class="add-check">
+          <input type="text" id="checkNo" placeholder="Çek No" />
+          <input type="date" id="checkDate" />
+          <input type="number" id="checkAmount" placeholder="Tutar (₺)" />
+          <button onclick="addCheck()">Ekle</button>
+        </div>
+        <div id="checksList">
+          <!-- Çekler buraya eklenecek -->
+        </div>
+        <div class="total-box">
+          Toplam Tutar: <span id="totalAmount">0</span> ₺
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
